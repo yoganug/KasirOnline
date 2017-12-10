@@ -22,7 +22,16 @@ class Register extends CI_controller {
         $this->load->view('Register');
     }
     
-    function Signup(){
-        $username = $this->post->input('');
+    function signup(){
+        if(isset($_POST['submit'])){
+            // proses data
+            $nama       =  $this->input->post('nama',true);
+            $username   =  $this->input->post('username',true);
+            $password   =  $this->input->post('password',true);
+            $jawaban    =  $this->input->post('jawaban',true);
+            
+            $this->m_pegawai->add($nama, $username, $password, $jawaban);
+            redirect('Pegawai');
+        }
     }
 }
