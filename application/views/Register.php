@@ -2,7 +2,7 @@
 <head>
 <meta charset="utf-8">
 <title>POS - Point Of Sale</title>
-<link href="<?php echo base_url().'assets/' ?>login_style.css" rel='stylesheet' type='text/css' />
+<link href="<?php echo base_url().'assets/' ?>Register_style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!--webfonts-->
@@ -22,10 +22,10 @@
 			<img src="<?php echo base_url().'assets/img/' ?>user.png" alt="">
 		</div>
 		<div class="login">
+                    <span class="register"><label>MEMBUAT AKUN</label></span>
 			<div class="inset">				
 					<?php echo form_open('Register/signup'); ?>
 			         <div>
-                                     <span class="register"><label>Membuat akun</label></span>
 						<span><label>nama</label></span>
 						<span><input type="text" name="nama" class="textbox"></span>
 					 </div>
@@ -39,10 +39,7 @@
 					 </div>
                                                 <span><label>Nama Ibu Anda?</label></span>
 					    <span><input type="text" name="jawaban" class="textboxt"></span>
-					 </div>
-                            
-                                        
-                            
+					 </div>                           
 					<div class="sign">
 						<div class="submit">
 						  <input type="submit" name="submit" onclick="myFunction()" value="SIGN UP" >
