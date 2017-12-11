@@ -29,11 +29,12 @@ class m_Pegawai extends CI_model {
         return $this->db->get('pegawai');
     }
     
-    function add($nama, $username, $password){
+    function add($nama, $username, $password, $jawaban){
         $data = array(
                 'nama' => $nama,
                 'username' => $username,
                 'password' => md5($password),
+                'jawaban'  => $jawaban
                 );
 
         $this->db->insert('pegawai',$data);
