@@ -39,7 +39,11 @@ class m_barang extends CI_Model {
 
             return $res;
         }
-    
+        
+    function edit($data,$id){
+        $this->db->where('barang_id',$id);
+        $this->db->update('barang',$data);
+    }
     /*
     public function getByBarang($nama){
         
@@ -54,6 +58,11 @@ class m_barang extends CI_Model {
     function delete($id) {
         $this->db->where('barang_id', $id);
         $this->db->delete('barang');
+    }
+    
+    function get_one($id){
+        $param  =   array('barang_id'=>$id);
+        return $this->db->get_where('barang',$param);
     }
 
 }

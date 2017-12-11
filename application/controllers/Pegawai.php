@@ -16,6 +16,7 @@ class Pegawai {
     function __construct() {
         parent::__construct();
         $this->load->model('Pegawai');
+        $this->load->library(array('form_validation'));
         chek_session();
     }
     
@@ -26,14 +27,15 @@ class Pegawai {
     
     function post(){
         if(isset($_POST['submit'])){
-            // proses data
+            
+            
             $nama       =  $this->input->post('nama',true);
             $username   =  $this->input->post('username',true);
             $password   =  $this->input->post('password',true);
             $jawaban    =  $this->input->post('jawaban',true);
             
             $this->m_pegawai->add($nama, $username, $password, $jawaban);
-            redirect('Pegawai');
+            redirect('Auth/login');
         }
     }
 }

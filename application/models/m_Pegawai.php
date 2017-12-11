@@ -31,7 +31,7 @@ class m_Pegawai extends CI_model {
     
     function add($nama, $username, $password, $jawaban){
         $data = array(
-                'nama' => $nama,
+                'nama_lengkap' => $nama,
                 'username' => $username,
                 'password' => md5($password),
                 'jawaban'  => $jawaban

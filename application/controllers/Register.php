@@ -25,13 +25,23 @@ class Register extends CI_controller {
     function signup(){
         if(isset($_POST['submit'])){
             // proses data
-            $nama       =  $this->input->post('nama',true);
-            $username   =  $this->input->post('username',true);
-            $password   =  $this->input->post('password',true);
-            $jawaban    =  $this->input->post('jawaban',true);
             
-            $this->m_pegawai->add($nama, $username, $password, $jawaban);
-            redirect('Pegawai');
+            $this->form_validation->set_rules('nama', 'NAME','required');
+            $this->form_validation->set_rules('username', 'USERNAME','required');
+            
+            $nama       =  $this->input->post('nama');
+            $username   =  $this->input->post('username');
+            $password   =  $this->input->post('password');
+            $jawaban    =  $this->input->post('jawaban');
+            
+            if($nama!=null || $username!=null || $password!=null || $jawaban!=null ){
+                $this->m_pegawai->add($nama, $username, $password, $jawaban);
+                redirect('Auth/login');
+            }
+                else{
+                    redirect('register');
+                    echo 'data masih ada yang belum di isi';
+                }
         }
     }
 }

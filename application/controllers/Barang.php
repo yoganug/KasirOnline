@@ -59,28 +59,28 @@ class Barang extends CI_Controller {
             redirect('barang');
         }
     
-//    function edit(){
-//       if(isset($_POST['submit'])){
-//            // proses barang
-//            $id         =   $this->input->post('id');
-//            $nama       =   $this->input->post('nama_barang');
-//            $kategori   =   $this->input->post('kategori');
-//            $harga      =   $this->input->post('harga');
-//            $data       = array('nama_barang'=>$nama,
-//                                'kategori_id'=>$kategori,
-//                                'harga'=>$harga);
-//            $this->model_barang->edit($data,$id);
-//            redirect('barang');
-//        }
-//        else{
-//            $id=  $this->uri->segment(3);
-//            $this->load->model('model_kategori');
-//            $data['kategori']   =  $this->model_kategori->tampilkan_data()->result();
-//            $data['record']     =  $this->model_barang->get_one($id)->row_array();
-//            //$this->load->view('barang/form_edit',$data);
-//            $this->template->load('template','barang/form_edit',$data);
-//        }
-//    }
+    function edit(){
+       if(isset($_POST['submit'])){
+            // proses barang
+            $id         =   $this->input->post('id');
+            $nama       =   $this->input->post('nama_barang');
+            $kategori   =   $this->input->post('kategori');
+            $harga      =   $this->input->post('harga');
+            $data       = array('nama_barang'=>$nama,
+                                'kategori_id'=>$kategori,
+                                'harga'=>$harga);
+            $this->m_barang->edit($data,$id);
+            redirect('barang');
+        }
+        else{
+            $id=  $this->uri->segment(3);
+            $this->load->model('m_kategori');
+            $data['kategori']   =  $this->m_kategori->tampilkan_data()->result();
+            $data['record']     =  $this->m_barang->get_one($id)->row_array();
+            //$this->load->view('barang/form_edit',$data);
+            $this->template->load('template','barang/form_edit',$data);
+        }
+    }
  
     
     
