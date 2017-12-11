@@ -25,7 +25,7 @@ class Promo extends CI_Controller{
             $bsrDiskon  =   $this->input->post('diskon_promo');
             $data       = array('nama_promo'=>$namaPromo,
                                 'date_promo'=>$tglPromo,
-                                'besar_diskon'=>($bsrDiskon)*0.01);
+                                'besar_diskon'=>(($bsrDiskon))*0.01);
             $this->m_Promo->post($data);
             redirect('barang');
         }

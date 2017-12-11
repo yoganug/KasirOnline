@@ -73,11 +73,11 @@
                                                 <td><?php echo $no ?></td>
                                                 <td><?php echo $r->nama_barang.' - '.anchor('transaksi/hapusitem/'.$r->t_detail_id,'Hapus',array('style'=>'color:red;')) ?></td>
                                                 <td><?php echo $r->qty ?></td>
-                                                <td>Rp. <?php echo number_format($r->harga*$r->besar_diskon,2) ?></td>
+                                                <td>Rp. <?php echo number_format($r->harga-$r->besar_diskon*$r->harga,2) ?></td>
                                                 <td>Rp. <?php echo number_format($r->harga,2) ?></td>
-                                                <td>Rp. <?php echo number_format($r->qty*$r->harga*$r->besar_diskon,2) ?></td>
+                                                <td>Rp. <?php echo number_format($r->harga*$r->qty-$r->qty*$r->besar_diskon*$r->harga,2) ?></td>
                                             </tr>
-                                        <?php $total=$total+($r->qty*$r->harga);
+                                        <?php $total=$total+($r->harga*$r->qty-$r->qty*$r->besar_diskon*$r->harga);
                                         $no++; } ?>
                                             <tr class="gradeA">
                                                 <td colspan="4">T O T A L</td>
