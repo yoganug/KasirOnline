@@ -34,7 +34,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
-                                          <button type="submit" name="submit" class="btn btn-primary btn-sm">Simpan</button> | <?php echo anchor('transaksi/selesai_belanja','Selesai',array('class'=>'btn btn-success btn-sm'))?>
+                                          <button type="submit" name="submit" class="btn btn-primary btn-sm">Simpan</button> | <?php echo anchor('transaksi/selesai_belanja','Selesai',array('class'=>'btn btn-success btn-sm'))?> | <?php echo anchor('transaksi/pdf','Print',array('class'=>'btn btn-success btn-sm'))?>
                                         </div>
                                     </div>
                                 </form>

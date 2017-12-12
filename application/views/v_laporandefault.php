@@ -36,10 +36,10 @@
                                     </tr>
                                 <?php $total=$total+($r->harga*$r->qty-$r->qty*$r->besar_diskon*$r->harga);
                                 $no++; } ?>
-<!--                                    <tr class="gradeA">
+                                    <tr class="gradeA">
                                         <td colspan="4">T O T A L</td>
-                                        <td>Rp. <!?php echo number_format($total,2);?></td>
-                                    </tr>-->
+                                        <td>Rp. <?php echo number_format($total,2);?></td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
