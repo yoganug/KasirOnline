@@ -44,9 +44,9 @@ class m_Transaksi extends CI_model {
 
     function tampilkan_laporan() {
         $username = $_SESSION["username"];
-        $query = "SELECT t.tanggal_transaksi,o.username,sum(td.harga*td.qty) as total
-                FROM transaksi as t,transaksi_detail as td,pegawai as o
-                WHERE td.transaksi_id=t.transaksi_id and o.pegawai_id=t.pegawai_id and username='$username'
+        $query = "SELECT t.tanggal_transaksi,o.username,sum(td.harga*td.qty*p.besar_diskon) as total
+                FROM transaksi as t,transaksi_detail as td,pegawai as o, promo as p
+                WHERE p.promo_id=td.promo and td.transaksi_id=t.transaksi_id and o.pegawai_id=t.pegawai_id and username='$username'
                 group by t.transaksi_id";
         return $this->db->query($query)->result();
     }
