@@ -42,7 +42,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php $no=1; $total=0; foreach ($record->result() as $r){ ?>
+                                        <?php $no=1; $total=0; foreach ($detail as $r){ ?>
                                             <tr class="gradeU">
                                                 <td><?php echo $no ?></td>
                                                 <td><?php echo $r->tanggal_transaksi ?></td>

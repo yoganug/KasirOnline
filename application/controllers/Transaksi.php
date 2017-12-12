@@ -49,4 +49,12 @@ class Transaksi extends CI_Controller {
         $this->m_transaksi->simpan_barang($data);
         redirect('transaksi');
     }
+    
+    function laporan(){
+        //$data['barang'] = $this->m_barang->tampil_data();
+            $data['detail'] = $this->m_transaksi->tampilkan_laporan();
+            //$data['promo']=  $this->m_Promo->tampilkan_data()->result();
+            $this->template->load('template','v_laporandefault',$data);
+//            $data['detail'] = $this->m_transaksi->
+    }
 }

@@ -73,7 +73,7 @@
                         <a href="#"><i class="fa fa-sitemap"></i> Laporan<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="<?php echo base_url().'transaksi/laporan'?>">Laoran Default</a>
+                                <a href="<?php echo site_url().'/laporan'?>">Laporan Default</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url().'transaksi/excel'?>">Laporan Excel</a>

@@ -40,4 +40,12 @@ class m_Transaksi extends CI_model {
         $this->db->where('t_detail_id',$id);
         $this->db->delete('transaksi_detail');
     }
-}
+    
+    function tampilkan_laporan(){
+        $sql  ="SELECT * FROM transaksi_detail";
+//        $sql = "SELECT td.t_detail_id, b.nama_barang,p.promo_id, td.qty, b.harga FROM transaksi_detail td join barang b join promo p on p.promo_id=td.promo and td.barang_id=b.barang_id WHERE b.barang_id=td.barang_id and td.status='0' "
+        $query = $this->db->query($sql);
+        return $query->result();
+    }
+}   
+
