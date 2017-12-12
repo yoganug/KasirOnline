@@ -25,12 +25,14 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                    <label>Promo yg Digunakan</label>
+                                    <label class="col-sm-2 control-label">Promo yg Digunakan</label>
+                                     <div class="col-sm-10">
                                     <select name="promo" class="form-control">
                                         <?php foreach ($promo as $p) {
                                             echo "<option value='$p->promo_id'>$p->nama_promo</option>";
                                         } ?>
                                     </select>
+                                     </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">

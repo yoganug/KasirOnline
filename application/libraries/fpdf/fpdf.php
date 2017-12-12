@@ -9,8 +9,7 @@
 
 define('FPDF_VERSION','1.7');
 
-class FPDF
-{
+class fpdf{
 var $page;               // current page number
 var $n;                  // current object number
 var $offsets;            // array of object offsets
