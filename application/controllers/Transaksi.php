@@ -45,8 +45,10 @@ class Transaksi extends CI_Controller {
         $user = $this->session->userdata('username');
         $id_op = $this->db->get_where('pegawai', array('username' => $user))->row_array();
         $data = array('pegawai_id' => $id_op['pegawai_id'], 'tanggal_transaksi' => $tanggal);
-        redirect('transaksi/pdf','transaksi');
+        
         $this->m_transaksi->selesai_belanja($data);
+        redirect('transaksi');
+        
         
         
     }
