@@ -1,4 +1,4 @@
-
+<!--
 <div class="row">
             <div class="col-md-12">
                 <h2 class="page-header">
@@ -6,7 +6,7 @@
                 </h2>
             </div>
         </div> 
-        <!-- /. ROW  -->
+         /. ROW  
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
@@ -28,11 +28,11 @@
                                     foreach ($detail as $r){ ?>
                                     <tr class="gradeU">
                                         <td><?php echo $no ?></td>
-                                        <td><?php echo $r->nama_barang.' - '.anchor('transaksi/hapusitem/'.$r->t_detail_id,'Hapus',array('style'=>'color:red;')) ?></td>
+                                        <td><?php echo $r->nama_barang ?></td>
                                         <td><?php echo $r->qty ?></td>
-                                        <td>Rp. <?php echo number_format($r->harga-$r->besar_diskon*$r->harga,2) ?></td>
-                                        <td>Rp. <?php echo number_format($r->harga,2) ?></td>
-                                        <td>Rp. <?php echo number_format($r->harga*$r->qty-$r->qty*$r->besar_diskon*$r->harga,2) ?></td>
+                                        <td>Rp. <?php echo number_format($r->harga-$r->besar_diskon*$r->harga) ?></td>
+                                        <td>Rp. <?php echo number_format($r->harga) ?></td>
+                                        <td>Rp. <?php echo number_format($r->harga*$r->qty-$r->qty*$r->besar_diskon*$r->harga) ?></td>
                                     </tr>
                                 <?php $total=$total+($r->harga*$r->qty-$r->qty*$r->besar_diskon*$r->harga);
                                 $no++; } ?>
@@ -43,9 +43,9 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- /. TABLE  -->
+                         /. TABLE  
                     </div>
                 </div>
             </div>
         </div>
-
+-->

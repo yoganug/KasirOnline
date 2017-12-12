@@ -42,11 +42,11 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        <?php $no=1; $total=0; foreach ($detail as $r){ ?>
+                                        <?php $no=1; $total=0; foreach ($record as $r){ ?>
                                             <tr class="gradeU">
                                                 <td><?php echo $no ?></td>
                                                 <td><?php echo $r->tanggal_transaksi ?></td>
-                                                <td><?php echo $r->nama_lengkap ?></td>
+                                                <td><?php echo $r->username ?></td>
                                                 <td><?php echo $r->total ?></td>
                                             </tr>
                                         <?php $no++; $total=$total+$r->total; } ?>
