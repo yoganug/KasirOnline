@@ -93,9 +93,9 @@ class Transaksi extends CI_Controller {
             $pdf->Cell(10, 7, $no, 1, 0);
             $pdf->Cell(27, 7, $r->nama_barang, 1, 0);
             $pdf->Cell(30, 7, $r->qty, 1, 0);
-            $pdf->Cell(38, 7, $r->harga*$r->qty, 1, 1);
+            $pdf->Cell(38, 7, $r->harga*$r->qty-$r->qty*$r->besar_diskon*$r->harga, 1, 1);
             $no++;
-            //$total = $total + $r->total;
+            $total=$total+($r->harga*$r->qty-$r->qty*$r->besar_diskon*$r->harga);
         }
         // end
         $pdf->Cell(67, 7, 'Total', 1, 0, 'R');

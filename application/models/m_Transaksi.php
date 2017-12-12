@@ -55,7 +55,7 @@ class m_Transaksi extends CI_model {
         $this->db->query("update transaksi_detail set status='1' where status='0'");
     }
     function laporan_default(){
-        $query= "SELECT b.nama_barang, td.qty, b.harga
+        $query= "SELECT b.nama_barang, td.qty, b.harga, p.besar_diskon
                 FROM transaksi_detail td join barang b join promo p on p.promo_id=td.promo and td.barang_id=b.barang_id
                 WHERE b.barang_id=td.barang_id and td.status='0'";
         return $this->db->query($query);
