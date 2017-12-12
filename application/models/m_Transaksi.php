@@ -47,5 +47,18 @@ class m_Transaksi extends CI_model {
         $query = $this->db->query($sql);
         return $query->result();
     }
+    function selesai_belanja($data)
+    {
+        $this->db->insert('transaksi',$data);
+        $last_id=  $this->db->query("select transaksi_id from transaksi order by transaksi_id desc")->row_array();
+        $this->db->query("update transaksi_detail set transaksi_id='".$last_id['transaksi_id']."' where status='0'");
+        $this->db->query("update transaksi_detail set status='1' where status='0'");
+    }
+    function laporan_default(){
+        $query= "SELECT b.nama_barang, td.qty, b.harga
+                FROM transaksi_detail td join barang b join promo p on p.promo_id=td.promo and td.barang_id=b.barang_id
+                WHERE b.barang_id=td.barang_id and td.status='0'";
+        return $this->db->query($query);
+    }
 }   
 
