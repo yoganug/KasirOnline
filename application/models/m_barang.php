@@ -29,7 +29,7 @@ class m_barang extends CI_Model {
             $id_barang = $this->db->insert_id();
             $username = $_SESSION["username"];
             $query = "SELECT pegawai_id FROM pegawai WHERE username='$username'";
-            $query1 = $this->db->query($query); //QUERY EXECUTE
+            $query1 = $this->db->query($query);
             foreach ($query1->result() as $row) {
                 $id = $row->pegawai_id;
             }
