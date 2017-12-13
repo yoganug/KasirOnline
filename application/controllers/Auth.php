@@ -45,7 +45,11 @@ class Auth extends CI_Controller {
     }
     
     function lupapass(){
-        $this->load->view('LupaPassword');
+        $var1 = rand(0, 9);
+        $var2 = rand(0, 9);
+        $data['var1'] = $var1;
+        $data['var2'] = $var2;
+        $this->load->view('LupaPassword',$data);
     }
     
     function resetpass(){
@@ -54,21 +58,28 @@ class Auth extends CI_Controller {
             $pass1 = $this->input->post('passnew');
             $pass2 = $this->input->post('passnew2');
             $data       = array('password'=>md5($pass1));
-            
-                 if($pass1=$pass2){
+            $var1 = $this->input->post('var1');
+            $var2 = $this->input->post('var2');
+            $jawaban = $this->input->post('jawaban');
+            $benar = $var1+$var2;
+            if($jawaban==$benar){
+                if($pass1==$pass2){
                      $this->m_Pegawai->editPass($data,$ktp);
                      redirect('Auth/login');
+                 }else{
+                     echo "<script type='text/javascript'>alert('password baru tidak cocok')</script>";
                  }
+            }else{
+                echo "<script type='text/javascript'>alert('jawaban perhitungan salah')</script>";
+                redirect('Auth/lupapass');
+            }
+                 
               
               
         }
     }
     
-    function newPass(){
-        if(isset($_POST['submit'])){
-            $ktp = $this->input->post('ktp');
-        }
-    }
+    
 }
    
 

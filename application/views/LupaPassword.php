@@ -8,12 +8,12 @@
 <!--webfonts-->
 <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700|Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
 <!--//webfonts-->
-<script>
+<!--<script>
 	function myFunction()
 		{
 			alert("Thanks for login");
 		}
-</script>
+</script>-->
 </head>
  
 <body>
@@ -30,11 +30,28 @@
 					 </div>
                                          <div>
 						<span><label>Password Baru</label></span>
-						<span><input type="text" name="passnew" class="textbox" id="active"></span>
+						<span><input type="password" name="passnew" class="textbox" id="active"></span>
 					 </div>
                                          <div>
 						<span><label>Konfirmasi Password Baru</label></span>
-						<span><input type="text" name="passnew2" class="textbox" id="active"></span>
+						<span><input type="password" name="passnew2" class="textbox" id="active"></span>
+					 </div>
+                                         <div>
+						<span><label>Jawab Perhitungan</label></span>
+						
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            <input type="text" name="var1" class="textbox" value="<?php echo $var1?>" id="active">
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <input type="text" name="var2" class="textbox" value="<?php echo $var2?>" id="active">
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <input type="text" name="jawaban" class="textbox" id="active">
+                                                        </div>
+                                                    </div>
+                                                
+                                                
 					 </div>
 					 
 					<div class="sign">
