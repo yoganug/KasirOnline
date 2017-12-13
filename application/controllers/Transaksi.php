@@ -59,6 +59,9 @@ class Transaksi extends CI_Controller {
             $tanggal2 = $this->input->post('tanggal2');
             $data['record'] = $this->m_transaksi->laporan_periode($tanggal1, $tanggal2);
             $this->template->load('template', 'transaksi/laporan', $data);
+        }if (isset($_POST['submitall'])){
+            $data['record'] = $this->m_transaksi->tampilkan_laporan();
+            $this->template->load('template', 'transaksi/laporan', $data);
         } else {
             $data['record'] = $this->m_transaksi->tampilkan_laporan();
             $this->template->load('template', 'transaksi/laporan', $data);

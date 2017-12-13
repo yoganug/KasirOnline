@@ -21,6 +21,7 @@
                                         <input type="text" name="tanggal2" class="form-control" placeholder="Tanggal Selesai">
                                     </div>
                                     <button class="btn btn-primary btn-sm" type="submit" name="submit">Tampilkan</button>
+                                    <button class="btn btn-danger btn-sm" type="submit" name="submitall">Tampilkan Semua</button>
                                 </form>
                             </div>
                         </div>

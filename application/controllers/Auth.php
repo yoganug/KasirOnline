@@ -43,6 +43,32 @@ class Auth extends CI_Controller {
         $this->session->sess_destroy();
         redirect('Auth/login');
     }
+    
+    function lupapass(){
+        $this->load->view('LupaPassword');
+    }
+    
+    function resetpass(){
+        if(isset($_POST['submit'])){
+            $ktp = $this->input->post('ktp');
+            $pass1 = $this->input->post('passnew');
+            $pass2 = $this->input->post('passnew2');
+            $data       = array('password'=>md5($pass1));
+            
+                 if($pass1=$pass2){
+                     $this->m_Pegawai->editPass($data,$ktp);
+                     redirect('Auth/login');
+                 }
+              
+              
+        }
+    }
+    
+    function newPass(){
+        if(isset($_POST['submit'])){
+            $ktp = $this->input->post('ktp');
+        }
+    }
 }
    
 

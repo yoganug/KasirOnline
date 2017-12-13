@@ -23,23 +23,25 @@
 		</div>
 		<div class="login">
 			<div class="inset">				
-					<?php echo form_open('Auth/login'); ?>
-			         <div>
-						<span><label>Username</label></span>
-						<span><input type="text" name="username" class="textbox" id="active"></span>
+					<?php echo form_open('Auth/resetpass'); ?>
+                                        <div>
+						<span><label>No.KTP</label></span>
+						<span><input type="text" name="ktp" class="textbox" id="active"></span>
 					 </div>
-					 <div>
-						<span><label>Password</label></span>
-					    <span><input type="password" name="password" class="password"></span>
+                                         <div>
+						<span><label>Password Baru</label></span>
+						<span><input type="text" name="passnew" class="textbox" id="active"></span>
 					 </div>
+                                         <div>
+						<span><label>Konfirmasi Password Baru</label></span>
+						<span><input type="text" name="passnew2" class="textbox" id="active"></span>
+					 </div>
+					 
 					<div class="sign">
 						<div class="submit">
-						  <input type="submit" name="submit" onclick="myFunction()" value="LOGIN" >
+						  <input type="submit" name="submit" onclick="myFunction()" value="Reset Password" >
 						</div>
-						<span class="forget-pass">
-							<a href="<?php echo site_url().'/Auth/lupapass'?>">Forgot Password?</a>							
-						</span>
-							<div class="clear"> </div>
+						
 					</div>
 					</form>
                                         

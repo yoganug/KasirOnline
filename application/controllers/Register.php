@@ -32,10 +32,10 @@ class Register extends CI_controller {
             $nama       =  $this->input->post('nama');
             $username   =  $this->input->post('username');
             $password   =  $this->input->post('password');
-            $jawaban    =  $this->input->post('jawaban');
+            $ktp    =  $this->input->post('ktp');
             
-            if($nama!=null || $username!=null || $password!=null || $jawaban!=null ){
-                $this->m_pegawai->add($nama, $username, $password, $jawaban);
+            if($nama!=null || $username!=null || $password!=null || $ktp!=null ){
+                $this->m_pegawai->add($nama, $username, $password, $ktp);
                 redirect('Auth/login');
             }
                 else{
