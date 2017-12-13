@@ -22,6 +22,24 @@ class m_Promo extends CI_Model{
 //        $this->db->insert('pegawai_barang',$data2);  
     }
     function tampilkan_data(){
-        return $this->db->get('promo');
+        $username = $_SESSION['username'];
+        $result = $this->db->select('*')
+                ->from('promo')
+                ->where('username', $username)
+                ->get();
+         
+        return $result;
+    }
+    function get_one($id){
+        $param  =   array('promo_id'=>$id);
+        return $this->db->get_where('promo',$param);
+    }
+    function edit($data,$id){
+        $this->db->where('promo_id',$id);
+        $this->db->update('promo',$data);
+    }
+    function delete($id) {
+        $this->db->where('promo_id', $id);
+        $this->db->delete('promo');
     }
 }

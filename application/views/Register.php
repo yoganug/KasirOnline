@@ -27,18 +27,18 @@
 					<?php echo form_open('Register/signup'); ?>
 			         <div>
 						<span><label>nama</label></span>
-						<span><input type="text" name="nama" class="textbox"></span>
+                                                <span><input type="text" name="nama" class="textbox" required></span>
 					 </div>
                                           <div>
 						<span><label>Username</label></span>
-					    <span><input type="text" name="username" class="textbox"></span>
+                                                <span><input type="text" name="username" class="textbox" required></span>
 					 </div>
 					 <div>
 						<span><label>Password</label></span>
-					    <span><input type="password" name="password" class="password"></span>
+					    <span><input type="password" name="password" class="password" required></span>
 					 </div>
                                                 <span><label>Nama Ibu Anda?</label></span>
-					    <span><input type="text" name="jawaban" class="textboxt"></span>
+                                                <span><input type="text" name="jawaban" class="textboxt" required></span>
 					 </div>                           
 					<div class="sign">
 						<div class="submit">
